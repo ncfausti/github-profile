@@ -4,7 +4,7 @@ import {white, pink600, pink500} from 'material-ui/styles/colors';
 import {BarChart, Bar, ResponsiveContainer, XAxis} from 'recharts';
 import GlobalStyles from '../../styles';
 
-const MonthlySales = (props) => {
+const MonthlyCommits = (props) => {
 
   const styles = {
     paper: {
@@ -26,7 +26,7 @@ const MonthlySales = (props) => {
 
   return (
     <Paper style={styles.paper}>
-      <div style={{...GlobalStyles.title, ...styles.header}}>Monthly Sales</div>
+      <div style={{...GlobalStyles.title, ...styles.header}}>Monthly Commits</div>
       <div style={styles.div}>
         <ResponsiveContainer>
           <BarChart data={props.data} >
@@ -39,8 +39,8 @@ const MonthlySales = (props) => {
   );
 };
 
-MonthlySales.propTypes = {
+MonthlyCommits.propTypes = {
   data: PropTypes.array
 };
 
-export default MonthlySales;
+export default MonthlyCommits;

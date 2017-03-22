@@ -8,7 +8,7 @@ import ExpandLess from 'material-ui/svg-icons/navigation/expand-less';
 import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
 import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
 
-const data = {
+let data = {
   menus: [
     { text: 'DashBoard', icon: <Assessment/>, link: '/dashboard' },
     { text: 'Form Page', icon: <Web/>, link: '/form' },
@@ -34,8 +34,8 @@ const data = {
       {id: 3, title: 'Apple iPhone 6', text: 'Apple iPhone 6 Plus 16GB Factory Unlocked GSM 4G '},
       {id: 4, title: 'Apple MacBook', text: 'Apple MacBook Pro MD101LL/A 13.3-Inch Laptop'}
     ],
-    monthlySales: [
-      {name: 'Jan', uv: 3700},
+    monthlyCommits: [
+      {name: 'Jan', uv: 1700},
       {name: 'Feb', uv: 3000},
       {name: 'Mar', uv: 2000},
       {name: 'Apr', uv: 2780},

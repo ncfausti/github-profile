@@ -6,14 +6,23 @@ import ThumbUp from 'material-ui/svg-icons/action/thumb-up';
 import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
 import InfoBox from '../components/dashboard/InfoBox';
 import NewOrders from '../components/dashboard/NewOrders';
-import MonthlySales from '../components/dashboard/MonthlySales';
+import MonthlyCommits from '../components/dashboard/MonthlyCommits';
 import BrowserUsage from '../components/dashboard/BrowserUsage';
-import RecentlyProducts from '../components/dashboard/RecentlyProducts';
+import RecentRepos from '../components/dashboard/RecentRepos';
 import globalStyles from '../styles';
 import Data from '../data';
 
-const DashboardPage = () => {
+// const DashboardPage = () => {
+class DashboardPage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      profile: {profile_image: ""},
+      memberSince: "March 21, 2017"
+   }
+  }
 
+  render() {
   return (
     <div>
       <h3 style={globalStyles.navigation}>Application / Dashboard</h3>
@@ -23,7 +32,7 @@ const DashboardPage = () => {
         <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 m-b-15 ">
           <InfoBox Icon={ShoppingCart}
                    color={pink600}
-                   title="Total Profit"
+                   title="Public Repos"
                    value="1500k"
           />
         </div>
@@ -32,7 +41,7 @@ const DashboardPage = () => {
         <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 m-b-15 ">
           <InfoBox Icon={ThumbUp}
                    color={cyan600}
-                   title="Likes"
+                   title="Following"
                    value="4231"
           />
         </div>
@@ -40,7 +49,7 @@ const DashboardPage = () => {
         <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 m-b-15 ">
           <InfoBox Icon={Assessment}
                    color={purple600}
-                   title="Sales"
+                   title="Followers"
                    value="460"
           />
         </div>
@@ -48,8 +57,8 @@ const DashboardPage = () => {
         <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 m-b-15 ">
           <InfoBox Icon={Face}
                    color={orange600}
-                   title="New Members"
-                   value="248"
+                   title="Member Since"
+                   value={this.state.memberSince}
           />
         </div>
       </div>
@@ -60,13 +69,13 @@ const DashboardPage = () => {
         </div>
 
         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 m-b-15">
-          <MonthlySales data={Data.dashBoardPage.monthlySales}/>
+          <MonthlyCommits data={Data.dashBoardPage.monthlyCommits}/>
         </div>
       </div>
 
       <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 m-b-15 ">
-          <RecentlyProducts data={Data.dashBoardPage.recentProducts}/>
+          <RecentRepos data={Data.dashBoardPage.recentProducts}/>
         </div>
 
         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 m-b-15 ">
@@ -76,5 +85,5 @@ const DashboardPage = () => {
     </div>
   );
 };
-
+}
 export default DashboardPage;

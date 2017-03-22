@@ -8,7 +8,8 @@ import Avatar from 'material-ui/Avatar';
 
 const LeftDrawer = (props) => {
   let { navDrawerOpen } = props;
-
+  let { profileImg } = props;
+  let { realName } = props;
   const styles = {
     logo: {
       cursor: 'pointer',
@@ -51,13 +52,14 @@ const LeftDrawer = (props) => {
       docked={true}
       open={navDrawerOpen}>
         <div style={styles.logo}>
-          Material Admin
+          Git Self
         </div>
         <div style={styles.avatar.div}>
-          <Avatar src="http://www.material-ui.com/images/uxceo-128.jpg"
+          <Avatar src={profileImg}
                   size={50}
+                  realName={realName}
                   style={styles.avatar.icon}/>
-          <span style={styles.avatar.span}>{props.username}</span>
+          <span style={styles.avatar.span}>{props.realName}</span>
         </div>
         <div>
           {props.menus.map((menu, index) =>

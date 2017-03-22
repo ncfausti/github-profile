@@ -28,18 +28,21 @@ const SearchBox = () => {
     }
   };
 
+  const username = "ncfausti";
+
   return (
     <div>
       <IconButton style={styles.iconButton} >
-        <Search color={white} />
+        <Search color={white}/>
       </IconButton>
       <TextField
-        hintText="Search..."
+        hintText={username}
         underlineShow={false}
         fullWidth={true}
         style={styles.textField}
         inputStyle={styles.inputStyle}
         hintStyle={styles.hintStyle}
+
       />
     </div>
   );
