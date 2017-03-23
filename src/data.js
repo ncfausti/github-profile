@@ -8,12 +8,49 @@ import ExpandLess from 'material-ui/svg-icons/navigation/expand-less';
 import ExpandMore from 'material-ui/svg-icons/navigation/expand-more';
 import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
 
+/*
+json obj returned from github api
+{
+  "login": "ncfausti",
+  "id": 886669,
+  "avatar_url": "https://avatars1.githubusercontent.com/u/886669?v=3",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/ncfausti",
+  "html_url": "https://github.com/ncfausti",
+  "followers_url": "https://api.github.com/users/ncfausti/followers",
+  "following_url": "https://api.github.com/users/ncfausti/following{/other_user}",
+  "gists_url": "https://api.github.com/users/ncfausti/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/ncfausti/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/ncfausti/subscriptions",
+  "organizations_url": "https://api.github.com/users/ncfausti/orgs",
+  "repos_url": "https://api.github.com/users/ncfausti/repos",
+  "events_url": "https://api.github.com/users/ncfausti/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/ncfausti/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": "Nick Fausti",
+  "company": null,
+  "blog": null,
+  "location": "Philadelphia",
+  "email": "ncfausti@gmail.com",
+  "hireable": null,
+  "bio": null,
+  "public_repos": 30,
+  "public_gists": 0,
+  "followers": 2,
+  "following": 2,
+  "created_at": "2011-06-30T14:59:12Z",
+  "updated_at": "2017-03-21T20:00:56Z"
+}
+*/
+
 let data = {
+  profile: {},
   menus: [
-    { text: 'DashBoard', icon: <Assessment/>, link: '/dashboard' },
-    { text: 'Form Page', icon: <Web/>, link: '/form' },
-    { text: 'Table Page', icon: <GridOn/>, link: '/table' },
-    { text: 'Login Page', icon: <PermIdentity/>, link: '/login' }
+    { text: 'Dashboard', icon: <Assessment/>, link: '/dashboard' },
+    { text: 'Repos', icon: <Web/>, link: '/form' },
+    { text: 'Followers', icon: <GridOn/>, link: '/table' },
+    { text: 'Following', icon: <PermIdentity/>, link: '/login' }
   ],
   tablePage: {
     items: [
@@ -29,10 +66,10 @@ let data = {
   },
   dashBoardPage: {
     recentProducts: [
-      {id: 1, title: 'Samsung TV', text: 'Samsung 32 1080p 60Hz LED Smart HDTV.'},
-      {id: 2, title: 'Playstation 4', text: 'PlayStation 3 500 GB System'},
-      {id: 3, title: 'Apple iPhone 6', text: 'Apple iPhone 6 Plus 16GB Factory Unlocked GSM 4G '},
-      {id: 4, title: 'Apple MacBook', text: 'Apple MacBook Pro MD101LL/A 13.3-Inch Laptop'}
+      {id: 1, title: 'Facebook App', text: 'Like my picture of cats'},
+      {id: 2, title: 'VR Game', text: 'Virtual Reality'},
+      {id: 3, title: 'XYZ', text: 'Learn the alphabet'},
+      {id: 4, title: 'Notes', text: 'An app to take notes on'}
     ],
     monthlyCommits: [
       {name: 'Jan', uv: 1700},

@@ -44,6 +44,9 @@ json obj returned from github api
   "updated_at": "2017-03-21T20:00:56Z"
 }
 */
+conlog() {
+console.log('called');
+}
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +62,7 @@ json obj returned from github api
       .then(res => {
         const profile = res.data;
         this.setState({ profile });
-        Data.menus[0].text = "Repos"
+        // Data.menus[0].text = "Repos"
 
         // Update all data fieds here
       });
