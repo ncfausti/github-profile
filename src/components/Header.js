@@ -10,7 +10,9 @@ import {white} from 'material-ui/styles/colors';
 import SearchBox from './SearchBox';
 
 class Header extends React.Component {
-
+constructor(props) {
+  super(props)
+}
   render() {
     const {styles, handleChangeRequestNavDrawer} = this.props;
 
@@ -34,7 +36,7 @@ class Header extends React.Component {
             <AppBar
               style={{...styles, ...style.appBar}}
               title={
-                <SearchBox />
+                <SearchBox changeProfile={this.props.changeProfile} />
               }
               iconElementLeft={
                   <IconButton style={style.menuButton} onClick={handleChangeRequestNavDrawer}>

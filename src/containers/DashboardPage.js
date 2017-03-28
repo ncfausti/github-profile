@@ -1,20 +1,20 @@
 import React from 'react';
 import {cyan600, pink600, purple600, orange600} from 'material-ui/styles/colors';
 import Assessment from 'material-ui/svg-icons/action/assessment';
-import Face from 'material-ui/svg-icons/action/face';
+// import Face from 'material-ui/svg-icons/action/face';
 import ThumbUp from 'material-ui/svg-icons/action/thumb-up';
-import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
+// import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
 import DateRange from 'material-ui/svg-icons/action/date-range';
 import Code from 'material-ui/svg-icons/action/code';
 import InfoBox from '../components/dashboard/InfoBox';
-import NewOrders from '../components/dashboard/NewOrders';
+// import NewOrders from '../components/dashboard/NewOrders';
 import MonthlyCommits from '../components/dashboard/MonthlyCommits';
-import BrowserUsage from '../components/dashboard/BrowserUsage';
+// import BrowserUsage from '../components/dashboard/BrowserUsage';
 import RecentRepos from '../components/dashboard/RecentRepos';
 import Paper from 'material-ui/Paper';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
+// import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 import globalStyles from '../styles';
@@ -22,6 +22,7 @@ import Data from '../data';
 
 // const DashboardPage = () => {
 class DashboardPage extends React.Component {
+
   constructor(props) {
     super(props);
     this.styles = {
@@ -62,7 +63,7 @@ class DashboardPage extends React.Component {
   {
     img: 'https://static.esea.net/global/images/users/679944.1458605905.jpg',
     title: 'Cybersecurity',
-    author: 'Hackerz',
+    author: 'H4ckerz',
   },
   {
     img: 'http://cdn.wallpapersafari.com/83/73/6oIFGZ.jpeg',
@@ -79,8 +80,12 @@ class DashboardPage extends React.Component {
   }
 
 
-
+  formatDate(d) {
+    let date = new Date(d);
+    return date.toDateString();
+  }
   render() {
+
   return (
     <div>
       <h3 style={globalStyles.navigation}>Profile / Dashboard</h3>
@@ -91,7 +96,7 @@ class DashboardPage extends React.Component {
           <InfoBox Icon={Code}
                    color={pink600}
                    title="Public Repos"
-                   value={Data.profile.public_repos}
+                   value={this.props.profile.public_repos}
           />
         </div>
 
@@ -100,7 +105,7 @@ class DashboardPage extends React.Component {
           <InfoBox Icon={ThumbUp}
                    color={cyan600}
                    title="Following"
-                   value={Data.profile.following}
+                   value={this.props.profile.following}
           />
         </div>
 
@@ -108,7 +113,8 @@ class DashboardPage extends React.Component {
           <InfoBox Icon={Assessment}
                    color={purple600}
                    title="Followers"
-                   value={Data.profile.followers}
+                   value={this.props.profile.followers}
+
           />
         </div>
 
@@ -116,7 +122,7 @@ class DashboardPage extends React.Component {
           <InfoBox Icon={DateRange}
                    color={orange600}
                    title="Member Since"
-                   value={Data.profile.created_at}
+                   value={this.formatDate(this.props.profile.created_at)}
           />
         </div>
       </div>
@@ -159,6 +165,6 @@ class DashboardPage extends React.Component {
 
     </div>
   );
-};
+}
 }
 export default DashboardPage;

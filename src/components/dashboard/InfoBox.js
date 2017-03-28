@@ -4,10 +4,8 @@ import {white, grey800} from 'material-ui/styles/colors';
 import {typography} from 'material-ui/styles';
 
 class InfoBox extends React.Component {
-
-  render(props) {
+  render() {
     const {color, title, value, Icon} = this.props;
-    let {followers} = this.props;
     const styles = {
       content: {
         padding: '5px 10px',
